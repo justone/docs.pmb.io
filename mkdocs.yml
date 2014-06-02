@@ -8,3 +8,4 @@ repo_url: https://github.com/justone/pmb
 
 pages:
 - ['index.md', 'Home']
+- ['getting_started.md', 'Documentation', 'Getting Started']
