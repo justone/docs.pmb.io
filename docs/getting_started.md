@@ -1,3 +1,8 @@
+<style type="text/css">
+img {
+border: 1px solid grey;
+}
+</style>
 # Getting started
 
 To use PMB, you need two things:
@@ -12,9 +17,7 @@ All messages flow through a RabbitMQ server.  However, almost none of the advanc
 The necessary configuration is:
 
 1. A username and password. (e.g. jimbob/supersecret)
-2. Permission for the user to $username-\* for exchanges, channels, and queues. (e.g. jimbob-\*)
-
-[TODO: Picture of permissions]
+2. Permission for the user to $username-\* for configure, write, and read. (e.g. jimbob-\*)
 
 ## Docker image
 
@@ -29,7 +32,28 @@ $ docker logs CCCCCCCCCCC
 
 ## Custom setup
 
-[TODO: Walkthrough adding user and perms, recommend a separate virtual host]
+If you are adding PMB users to an existing RabbitMQ setup, using an entirely new virtual host is recommended.
+
+### Step 1. Create the username and password.
+
+Click on the "Admin" tab at the top and expand the "Add a user" section.
+
+![Add User](add.png)
+
+### Step 2. Add permissions for the new user.
+
+Click on the username after creating it and expand the "Permissions" section.  Note that the permissions MUST begin with the username.
+
+![Add User](perms.png)
+
+### Step 3. Create the AMQP(S) url
+
+```
+#                        proto   user   password    hostname
+$ export PMB_PRIMARY_URI=amqps://jimbob:supersecret@mq.jimbob.com/
+```
+
+Note that the virtual host for the URL starts immediately after the hostname, so the virtual host above is `/`.  See the [specification](http://www.rabbitmq.com/uri-spec.html) for full details.
 
 # Getting `pmb`
 
