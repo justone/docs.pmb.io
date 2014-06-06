@@ -65,14 +65,14 @@ The bootstrap is a small perl script that will download and run the correct bina
 
 ```
 $ curl get.pmb.io/stable/bootstrap > ~/.dotfiles/bin/pmb
-$ curl get.pmb.io/testing/bootstrap > ~/.dotfiles/bin/pmb
 ```
 
 Running the script for the first time will download the binary from get.pmb.io and run it with the supplied arguments:
 
 ```
 $ pmb introducer
-[TODO: fill in fetching message and introducer start message]
+Fetching http://get.pmb.io/2014-05-22-0628-41ad571/pmb_linux_amd64
+2014-06-06 15:26:55 INFO  introducer.go:42 Introducer ready.
 ```
 
 Running the same command again won't re-download.  To upgrade to a newer version, just download the bootstrap again, either from one of the above URLs or a [specific version](http://get.pmb.io).
@@ -85,10 +85,11 @@ One downside to this is that you have to manually verify the MD5 signature after
 
 ```
 $ curl get.pmb.io/stable/pmb_linux_amd64 > /usr/local/bin/pmb
-$ curl get.pmb.io/testing/pmb_linux_amd64 > /usr/local/bin/pmb
-$
+$ curl -s get.pmb.io/stable/sums
+41063676cd78ce392c6c0c0d3a33104f  pmb_darwin_amd64
+07b5bab067d7af35dd2a336e2d26c685  pmb_linux_amd64
 $ md5sum /usr/local/bin/pmb
-[TODO: add example md5sum]
+07b5bab067d7af35dd2a336e2d26c685
 ```
 
 ## OS Packages
