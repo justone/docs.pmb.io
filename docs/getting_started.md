@@ -12,9 +12,9 @@ To use PMB, you need two things:
 
 # Getting RabbitMQ
 
-All messages flow through a RabbitMQ server.  However, almost none of the advanced feathers are used. Instead, a single topic exchange is created, each connection gets its own queue, and all connections get all messages.
+All messages flow through a RabbitMQ server.  However, almost none of RabbitMQ's advanced features are used. Instead, a single topic exchange is created, each connection gets its own queue, and all connections get all messages.
 
-The necessary configuration is:
+The necessary setup is:
 
 1. A username and password. (e.g. jimbob/supersecret)
 2. Permission for the user to $username-\* for configure, write, and read. (e.g. jimbob-\*)
@@ -84,7 +84,7 @@ Click on the username after creating it and expand the "Permissions" section.  N
 ### Step 3. Create the AMQP(S) url
 
 ```
-#                        proto   user   password    hostname
+                         proto   user   password    hostname
 $ export PMB_PRIMARY_URI=amqps://jimbob:supersecret@mq.jimbob.com/
 ```
 
@@ -92,7 +92,7 @@ Note that the virtual host for the URL starts immediately after the hostname, so
 
 # Getting `pmb`
 
-Personal Message Bus is a single binary, so installing it is very simple. There are three ways of installing. 
+Personal Message Bus is a single binary, so installing it is very simple. There are three ways of installing.
 
 ## Bootstrap
 
