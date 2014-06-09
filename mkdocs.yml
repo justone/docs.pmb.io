@@ -9,3 +9,8 @@ repo_url: https://github.com/justone/pmb
 pages:
 - ['index.md', 'Home']
 - ['getting_started.md', 'Documentation', 'Getting Started']
+- ['configuration.md', 'Documentation', 'Configuration']
+- ['messages.md', 'Documentation', 'Message Descriptions']
+- ['core.md', 'Documentation', 'Core Functionality']
+- ['concepts/introduction.md', 'Concepts', 'Introduction']
+- ['concepts/fact_driven.md', 'Concepts', 'Fact Driven Development']

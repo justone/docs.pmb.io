@@ -5,12 +5,14 @@ border: 1px solid grey;
 </style>
 # Getting started
 
-To use PMB, you need two things:
+To use PMB, you need to do the following:
 
-1. A RabbitMQ instance, with appropriate username/password set up.
-2. The `pmb` binary itself.
+1. Get access to a RabbitMQ instance, with appropriate username/password set up.
+2. Get the `pmb` binary itself.
+3. Run the introducer.
+4. Run PMB agents.
 
-# Getting RabbitMQ
+# 1. Getting RabbitMQ
 
 All messages flow through a RabbitMQ server.  However, almost none of RabbitMQ's advanced features are used. Instead, a single topic exchange is created, each connection gets its own queue, and all connections get all messages.
 
@@ -90,7 +92,7 @@ $ export PMB_PRIMARY_URI=amqps://jimbob:supersecret@mq.jimbob.com/
 
 Note that the virtual host for the URL starts immediately after the hostname, so the virtual host above is `/`.  See the [specification](http://www.rabbitmq.com/uri-spec.html) for full details.
 
-# Getting `pmb`
+# 2. Getting `pmb`
 
 Personal Message Bus is a single binary, so installing it is very simple. There are three ways of installing.
 
@@ -130,3 +132,23 @@ $ md5sum /usr/local/bin/pmb
 ## OS Packages
 
 Coming soon.
+
+# 3. Running the introducer
+
+All agents in a PMB system connect and authenticate via a process called introduction.  For more information about introduction, see [its documentation](concepts/introduction.md).  Introduction is coordinated by a local process called the introducer.  To configure and run the introducer:
+
+```
+$ export PMB_PRIMARY_URI=amqps://jimbob:supersecret@mq.jimbob.com/
+$ pmb introducer
+2014-06-06 15:26:55 INFO  introducer.go:42 Introducer ready.
+```
+
+# 4. Run PMB agents
+
+Once the introducer is running, any PMB agent can be run.  The only [configuration](configuration.md) that is necessary is the `$PMB_PRIMARY_URI` environment variable, pointing to the RabbitMQ instance.
+
+```
+$ export PMB_PRIMARY_URI=amqps://jimbob:supersecret@mq.jimbob.com/
+$ pmb remotecopy foo
+$ pmb notify -- long_process.rb
+```
