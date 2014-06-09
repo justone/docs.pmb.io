@@ -15,3 +15,13 @@ If the RabbitMQ instance is using a self signed certificate, then this environme
 ```
 export PMB_SSL_INSECURE_SKIP_VERIFY=1
 ```
+
+# PMB_KEY
+
+This is the shared encryption key. This key should be kept secret and not be committed to version control.
+
+This environment variable is not usually set.  It should only be set when agents need to run without prompting for the key.
+
+```
+export PMB_KEY=b2de0d2537b4bd37bd4bcb3754449c4f
+```
