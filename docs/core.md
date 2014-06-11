@@ -18,6 +18,26 @@ $ tail -n 3 interesting.c | pmb remotecopy
 
 The `pmb notify` command causes a notification to be displayed on your local machine (typically with Growl).
 
+It can be used to send a single notification.  This will pop up a local notification:
+
+```
+$ pmb notify -m 'Hello World'
+```
+
+A more useful feature of the notify agent is that it can wait to send the notification until a process has finished.
+
+This runs a process and sends a notification after it completes:
+
+```
+$ pmb notify -- long_process.rb
+```
+
+And this will watch an existing process and send a notification on completion:
+
+```
+$ pmb notify -p 12345
+```
+
 # Plugin
 
 The `pmb plugin` command facilitates running arbitrary programs to consume and produce messages.
