@@ -41,3 +41,10 @@ $ pmb notify -p 12345
 # Plugin
 
 The `pmb plugin` command facilitates running arbitrary programs to consume and produce messages.
+
+# Introducer
+
+The `pmb introducer` command's main purpose is to facilitate [introduction](concepts/introduction.md), but it also provides the following functionality:
+
+* When a remote copy is initiated, this agent is the one that actually does the local clipboard manipulation.
+* When a notification is requested, this agent uses Growl to display the notification.
