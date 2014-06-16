@@ -87,3 +87,39 @@ This message indicates that the notification was displayed.  The only additional
 ```
 
 # Introduction
+
+Introduction uses several message types.
+
+## RequestAuth
+
+This message indicates that an agent needs the encryption key in order to communicate securely.  This message is the only message type that is unencrypted.  There are no additional attributes. Example message:
+
+```
+{
+  "type": "RequestAuth",
+  ... common attributes ...
+}
+```
+
+## TestAuth
+
+This message is sent immediately after the encryption key is entered to check its validity.  There are no additional attributes.  Example message:
+
+```
+{
+  "type": "TestAuth",
+  ... common attributes ...
+}
+```
+
+## AuthValid
+
+This message is sent to indicate that a particular agent does have a valid encryption key.  The only additional attribute is `origin`, containing the id of the agent that sent the `TestAuth` message.  Example message:
+
+```
+{
+  "type": "AuthValid",
+  "origin": "notify-dfc245fe38cd",
+  ... common attributes ...
+}
+```
