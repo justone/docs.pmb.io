@@ -1,4 +1,4 @@
-image: nate/mkdocsgit
+image: nate/mkdocs
 script:
   - mkdocs build
   - ls site
