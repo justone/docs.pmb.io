@@ -2,6 +2,9 @@
 
 set -e
 
+env
+hostname
+
 if [[ $DRONE_BRANCH == "master" ]]; then
   rsync -aze 'ssh -p 22' site/ endot.org@endot.org:/home/54/domains/docs.pmb.io/html/
 else
