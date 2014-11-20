@@ -8,11 +8,10 @@ Facts are typically communicated in a asynchronous fashion, either over a centra
 
 # Benefits
 
-## Loose coupling between components
-
-## Resilient to change
-
-## Clear delineation of components
+* **Loose coupling between components** - Each component is only able to communicate with other components via messages.  This greatly simplifies interaction.
+* **Resilience to change** - Components aren't able to reach inside of each other, and so the internal design of each component can change as long as any messages emitted are consistent.
+* **Ease of testing** - Since all contact with external systems is via messages, simulating interactions for unit testing can be done by manufacturing different messages and feeding them into components.
+* **Clear delineation of components** - 
 
 # Example
 
