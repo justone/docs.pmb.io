@@ -101,7 +101,7 @@ Personal Message Bus is a single binary, so installing it is very simple. There 
 The bootstrap is a small perl script that will download and run the correct binary after verifying its MD5 signature. Installing via this method is recommended for those using [dfm](https://github.com/justone/dfm) or otherwise managing dotfiles with git, because only the small script is managed and not the full 5mb+ binary.
 
 ```
-$ curl get.pmb.io/stable/bootstrap > ~/.dotfiles/bin/pmb
+$ curl get.pmb.io/latest > ~/.dotfiles/bin/pmb
 ```
 
 Running the script for the first time will download the binary from get.pmb.io and run it with the supplied arguments:
