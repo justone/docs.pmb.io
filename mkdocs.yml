@@ -7,10 +7,12 @@ copyright: Copyright &copy; 2014, <a href="https://twitter.com/ndj">Nate Jones</
 repo_url: https://github.com/justone/pmb
 
 pages:
-- ['index.md', 'Home']
-- ['getting_started.md', 'Documentation', 'Getting Started']
-- ['configuration.md', 'Documentation', 'Configuration']
-- ['messages.md', 'Documentation', 'Message Descriptions']
-- ['core.md', 'Documentation', 'Core Functionality']
-- ['concepts/introduction.md', 'Concepts', 'Introduction']
-- ['concepts/fact_driven.md', 'Concepts', 'Fact Driven Development']
+- Home: index.md
+- Documentation:
+    - Getting Started: getting_started.md
+    - Configuration: configuration.md
+    - Message Descriptions: messages.md
+    - Core Functionality: core.md
+- Concepts:
+    - Introduction: concepts/introduction.md
+    - Fact Driven Development: concepts/fact_driven.md
