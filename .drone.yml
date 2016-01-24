@@ -1,9 +1,12 @@
 build:
-  image: nate/mkdocs
-  commands:
-    - mkdocs build
-    - ls site
-publish:
-  shell:
+  docs:
+    image: nate/mkdocs
     commands:
-      - echo hello world
+      - mkdocs build
+      - ls site
+  deploy:
+    image: nate/mkdocs
+    commands:
+      - ./deploy.sh
+    environment:
+      - PRIV_KEY="$$PRIV_KEY"
