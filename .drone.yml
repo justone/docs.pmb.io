@@ -1,7 +1,9 @@
-image: nate/mkdocs
-script:
-  - mkdocs build
-  - ls site
-deploy:
-  bash:
-    command: ./deploy.sh
+build:
+  image: nate/mkdocs
+  commands:
+    - mkdocs build
+    - ls site
+publish:
+  shell:
+    commands:
+      - echo hello world
