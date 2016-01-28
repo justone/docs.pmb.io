@@ -75,13 +75,13 @@ If you are adding PMB users to an existing RabbitMQ setup, using an entirely new
 
 Click on the "Admin" tab at the top and expand the "Add a user" section.
 
-![Add User](add.png)
+![Add User](getting_started/add.png)
 
 ### Step 2. Add permissions for the new user.
 
 Click on the username after creating it and expand the "Permissions" section.  Note that the permissions MUST begin with the username.
 
-![Add User](perms.png)
+![Add User](getting_started/perms.png)
 
 ### Step 3. Create the AMQP(S) url
 
