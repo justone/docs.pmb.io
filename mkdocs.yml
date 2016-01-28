@@ -2,8 +2,8 @@ site_name: Personal Message Bus
 site_url: http://docs.pmb.io/
 site_description: Project documentation for PMB.
 
-theme: cosmo
-copyright: Copyright &copy; 2014, <a href="https://twitter.com/ndj">Nate Jones</a>.
+theme: readthedocs
+copyright: Copyright &copy; 2014-2016, <a href="https://twitter.com/ndj">Nate Jones</a>.
 repo_url: https://github.com/justone/pmb
 
 pages:
