@@ -1,7 +1,12 @@
-image: nate/mkdocs:0.14.0
-script:
-  - mkdocs build
-  - ls site
-deploy:
-  bash:
-    command: ./deploy.sh
+build:
+  docs:
+    image: nate/mkdocs:0.15.0
+    commands:
+      - mkdocs build
+      - ls site
+  deploy:
+    image: nate/mkdocs:0.15.0
+    commands:
+      - ./deploy.sh
+    environment:
+      - PRIV_KEY="$$PRIV_KEY"
