@@ -94,14 +94,26 @@ Note that the virtual host for the URL starts immediately after the hostname, so
 
 # 2. Getting `pmb`
 
-Personal Message Bus is a single binary, so installing it is very simple. There are three ways of installing.
+Personal Message Bus is a single binary, so installing it is very simple.
+
+There are four ways of installing.
+
+## Holen
+
+If you're already using [holen](https://github.com/holen-app/holen), then all that's needed is to link `pmb`:
+
+```
+$ holen link pmb
+```
 
 ## Bootstrap
 
 The bootstrap is a small perl script that will download and run the correct binary after verifying its MD5 signature. Installing via this method is recommended for those using [dfm](https://github.com/justone/dfm) or otherwise managing dotfiles with git, because only the small script is managed and not the full 5mb+ binary.
 
+Note that this method doesn't currently work on Windows.
+
 ```
-$ curl get.pmb.io/latest > ~/.dotfiles/bin/pmb
+$ curl -L get.pmb.io/latest > ~/.dotfiles/bin/pmb
 ```
 
 Running the script for the first time will download the binary from get.pmb.io and run it with the supplied arguments:
@@ -118,15 +130,9 @@ Running the same command again won't re-download.  To upgrade to a newer version
 
 This method is best for when you know exactly which version and platform you need.
 
-One downside to this is that you have to manually verify the MD5 signature after download.
-
 ```
-$ curl get.pmb.io/stable/pmb_linux_amd64 > /usr/local/bin/pmb
-$ curl -s get.pmb.io/stable/sums
-41063676cd78ce392c6c0c0d3a33104f  pmb_darwin_amd64
-07b5bab067d7af35dd2a336e2d26c685  pmb_linux_amd64
-$ md5sum /usr/local/bin/pmb
-07b5bab067d7af35dd2a336e2d26c685
+$ curl http://get.pmb.io/2014-05-22-0628-41ad571/pmb_linux_amd64 > /usr/local/bin/pmb
+$ chmod +x /usr/local/bin/pmb
 ```
 
 ## OS Packages
@@ -150,5 +156,5 @@ Once the introducer is running, any PMB agent can be run.  The only [configurati
 ```
 $ export PMB_PRIMARY_URI=amqps://jimbob:supersecret@mq.jimbob.com/
 $ pmb remotecopy foo
-$ pmb notify -- long_process.rb
+$ pmb run -- long_process.rb
 ```
