@@ -9,7 +9,10 @@ repo_url: https://github.com/justone/pmb
 pages:
 - Home: index.md
 - Documentation:
-    - Getting Started: getting_started.md
+    - Getting Started:
+        - Overview: getting_started.md
+        - RabbitMQ Docker Image: rabbitmq_docker_image.md
+        - Custom RabbitMQ Setup: add_to_existing_rabbitmq.md
     - Configuration: configuration.md
     - Message Descriptions: messages.md
     - Core Functionality: core.md
